@@ -4,7 +4,7 @@
   grid-gap: 5rem;
 }
 .grid > div {
-  background: black;
+  background: rgb(89, 96, 104);
   padding: 1rem;
   position: relative;
 }
@@ -21,6 +21,6 @@
   transform: translate(-50%, -50%);
 }
 
-body {
+.grid-margin {
   margin: 10rem;
 }
