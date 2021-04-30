@@ -29,7 +29,9 @@
   <base target="_blank">
   
   <link rel="stylesheet" href="scrollbar.css">
+  <link rel="stylesheet" href="sidebar.css">
   <link rel="stylesheet" href="grid.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 </head>
 
@@ -70,5 +72,21 @@
     </p>
   </div>
 
+<!-- sidebar -->
+  <div id="mySidebar" class="sidebar" onmouseover="toggleSidebar()" onmouseout="toggleSidebar()">
+    <a href="#"><span><i class="material-icons">info</i><span class="icon-text">&nbsp;&nbsp;&nbsp;&nbsp;about</span></a><br>
+    <a href="#"><i class="material-icons">spa</i><span class="icon-text"></span>&nbsp;&nbsp;&nbsp;&nbsp;services</a></span>
+    </a><br>
+    <a href="#"><i class="material-icons">monetization_on</i><span class="icon-text"></span>&nbsp;&nbsp;&nbsp;&nbsp;clients</span></a><br>
+    <a href="#"><i class="material-icons">email</i><span class="icon-text"></span>&nbsp;&nbsp;&nbsp;&nbsp;contact<span></a>
+  </div>
+
+  <div id="main">
+    <h2>Open/Collapse Sidebar on Hover</h2>
+    <p>Hover over any part of the sidebar to open the it.</p>
+    <p>To close the sidebar, move your mouse out of the sidebar.</p>
+  </div>
+
+  <script  src="https://jqyuan.github.io/physics/sidebar.js"></script>
 </body>
 </html>
