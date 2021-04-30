@@ -2,8 +2,6 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-gap: 5rem;
-  transition: margin-left .5s;
-  padding: 16px;
   margin-left: 100px;
 }
 .grid > div {

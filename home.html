@@ -24,6 +24,25 @@
       width: 100%;
       border: none;
     }
+
+    * {
+      box-sizing: border-box;
+    }
+    .column {
+      float: left;
+      width: 50%;
+      padding: 10px;
+    }
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    @media screen and (max-width: 600px) {
+      .column {
+        width: 100%;
+      }
+    }
   </style>
   
   <base target="_blank">
@@ -37,13 +56,26 @@
 
 <body>
 
-  <div id="main">
-    <p>Monthly Update Emails</p>
-    <p><a href="https://jqyuan.github.io/physics/emails/february2021">February 2021</a></p>
-    <p><a href="https://jqyuan.github.io/physics/emails/march2021">March 2021</a></p>
-    <p><a href="https://jqyuan.github.io/physics/emails/april2021">April 2021</a></p>
-    <p><a href="https://jqyuan.github.io/physics/emails/may2021">May 2021</a></p>    
+  <div id= "main" class="row">
+    <div class="column">
+      <div>
+        <p>Monthly Update Emails</p>
+        <p><a href="https://jqyuan.github.io/physics/emails/february2021">February 2021</a></p>
+        <p><a href="https://jqyuan.github.io/physics/emails/march2021">March 2021</a></p>
+        <p><a href="https://jqyuan.github.io/physics/emails/april2021">April 2021</a></p>
+        <p><a href="https://jqyuan.github.io/physics/emails/may2021">May 2021</a></p>    
+      </div>
+    </div>
+    <div class="column">
+      <p style="text-align: right;">
+        <iframe src="https://widgets.remind.com/widget?token=9017dfd032770139acf40242ac110003&amp;height=500&amp;join=true" 
+          title="Remind Widget" 
+          style="height: 500px; width: auto;">
+        </iframe> 
+      </p>
+    </div>
   </div>
+  
 
   <div class=grid-margin>
     <div class="grid">
@@ -61,15 +93,6 @@
         <a href="https://www.remind.com/join/g2ka48"><img src="" alt="Asian Student Union" style="width:90%;height:90%"></a>
       </div>
     </div>
-  </div>
-
-  <div id="main">
-    <p style="text-align: right;">
-      <iframe src="https://widgets.remind.com/widget?token=9017dfd032770139acf40242ac110003&amp;height=500&amp;join=true" 
-        title="Remind Widget" 
-        style="height: 500px; width: auto;">
-      </iframe> 
-    </p>
   </div>
 
 <!-- sidebar -->
