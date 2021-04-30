@@ -4,7 +4,7 @@
   grid-gap: 5rem;
 }
 .grid > div {
-  background: rgb(89, 96, 104);
+  background: rgb(255, 255, 255);
   padding: 1rem;
   position: relative;
 }
@@ -23,4 +23,5 @@
 
 .grid-margin {
   margin: 10rem;
+  align-items: center;
 }
