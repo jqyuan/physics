@@ -51,7 +51,7 @@
         }
 
         .panel {
-            max-width: 800px;
+            max-width: 600px;
             background-color: #4b89dc;
             border-radius: 25px;
             padding-top: 16px !important;
@@ -63,18 +63,23 @@
             left: 50%;
             -ms-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
+            box-sizing: content-box;
+            width: 90%;
             padding: 0.01em 16px;
-            box-sizing: inherit;
             display: block;
             font-family: Verdana, sans-serif;
             font-size: 15px;
             line-height: 1.5;
             -webkit-text-size-adjust: 100%;
         }
-
+        .button-box {
+            margin: auto;
+            display: block;
+        }
         .button {
+            margin: auto;
             width: 98.5%;
-            font-size: 17px;
+            font-size: 20px;
             font-family: 'Source Sans Pro', sans-serif;
             border: none;
             border-radius: 5px;
@@ -93,13 +98,22 @@
             -moz-user-select: none;
             -ms-user-select: none;
             user-select: none;
-            background-color: #04AA6D;
             color: #ffffff;
-            background-color: #858585 !important;
+            background-color: #747286 !important;
             padding: 12px 24px !important;
             box-sizing: inherit;
             -webkit-text-size-adjust: 100%;
         }
+
+        .button:hover {
+            background-color: #2070da !important;
+        }
+
+        @media (min-width: 501px) {
+            .button,
+            .button-box {
+                width: 49.9999%;
+            }
     </style>
 
     <base target="_blank">
@@ -115,16 +129,16 @@
     <div>
         <div class="panel">
 
-            <img src="https://drive.google.com/uc?id=1v3SHgEZLfDHwPj0if9DnrZMrUCLU9TW-" style="width:98%;margin:20px 0"
+            <img src="https://drive.google.com/uc?id=1v3SHgEZLfDHwPj0if9DnrZMrUCLU9TW-" style="width:100%;margin:20px 0"
                 alt="Cafe Template"></a><br>
             <div style="box-sizing: inherit; display: block;">
-                <div class="button box">
-                    <a href="https://www.remind.com/join/lh-physics" target="_blank"
-                        class="button" style="width:98.5%">Physics</a>
+                <div class="button-box">
+                    <a href="https://www.remind.com/join/lh-physics" target="_blank" class="button"
+                        style="width:98.5%">Physics</a>
                 </div>
-                <div class="button box">
-                    <a href="https://www.remind.com/join/lhphysicsh" target="_blank"
-                        class="button" style="width:98.5%">Physics Honors</a>
+                <div class="button-box">
+                    <a href="https://www.remind.com/join/lhphysicsh" target="_blank" class="button"
+                        style="width:98.5%">Physics Honors</a>
                 </div>
             </div>
         </div>
