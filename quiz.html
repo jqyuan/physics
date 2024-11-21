@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="scrollbar.css">
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Resources</title>
+    <style>
+        /* Reset styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Menu styling */
+        #menu-container {
+            position: fixed;
+            top: -60px; /* Hidden above the viewport */
+            left: 0;
+            width: 100%;
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: top 0.3s ease; /* Smooth sliding animation */
+        }
+        #menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px 0;
+        }
+        #menu button {
+            background-color: #2F72DC;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        #menu button:hover {
+            background-color: #2457a8;
+        }
+        #menu button.active {
+            background-color: #2457a8;
+        }
+
+        /* Main content area */
+        #content {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+            margin-top: 10px; /* To account for hidden menu space */
+        }
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: none; /* Initially hidden */
+        }
+        iframe.active {
+            display: block; /* Show only active iframe */
+        }
+
+        /* Hover zone to show the menu */
+        #hover-zone {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 75px; /* The height of the hover detection area */
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hover zone to detect mouse movement -->
+    <div id="hover-zone"></div>
+
+    <!-- Menu container -->
+    <div id="menu-container">
+        <div id="menu">
+            <button id="btn1" onclick="showIframe('iframe1')">Desmos</button>
+            <button id="btn2" onclick="showIframe('iframe2')">Ask a Question</button>
+        </div>
+    </div>
+
+    <!-- Main content area -->
+    <div id="content">
+        <iframe id="iframe1" src="https://www.desmos.com/testing/default/scientific"></iframe>
+        <iframe id="iframe2" src="https://student.magicschool.ai/s/join?joinCode=4nocow"></iframe>
+    </div>
+
+    <script>
+        const menuContainer = document.getElementById('menu-container');
+        const hoverZone = document.getElementById('hover-zone');
+        let timeoutID;
+
+        // Show menu when hovering near the top
+        hoverZone.addEventListener('mouseenter', () => {
+            clearTimeout(timeoutID); // Clear any previous timeout
+            menuContainer.style.top = '0'; // Show the menu immediately
+        });
+
+        // Hide menu after a delay when the mouse leaves the hover zone
+        hoverZone.addEventListener('mouseleave', () => {
+            timeoutID = setTimeout(() => {
+                menuContainer.style.top = '-60px'; // Hide the menu after delay
+            }, 200); // Delay of 200ms
+        });
+
+        // Show menu when hovering over the menu itself
+        menuContainer.addEventListener('mouseenter', () => {
+            clearTimeout(timeoutID); // Clear any timeout to prevent hiding
+            menuContainer.style.top = '0'; // Keep menu visible
+        });
+
+        // Hide menu if mouse leaves the menu
+        menuContainer.addEventListener('mouseleave', () => {
+            timeoutID = setTimeout(() => {
+                menuContainer.style.top = '-60px'; // Hide menu after delay
+            }, 200); // Delay of 200ms
+        });
+
+        function showIframe(iframeId) {
+            // Hide all iframes
+            const iframes = document.querySelectorAll('iframe');
+            const buttons = document.querySelectorAll('#menu button');
+            iframes.forEach(iframe => iframe.classList.remove('active'));
+            buttons.forEach(button => button.classList.remove('active'));
+
+            // Show the selected iframe and highlight the button
+            const activeIframe = document.getElementById(iframeId);
+            const activeButton = document.querySelector(`#menu button[onclick*="${iframeId}"]`);
+            activeIframe.classList.add('active');
+            activeButton.classList.add('active');
+        }
+
+        // Show the first iframe by default
+        document.getElementById('iframe1').classList.add('active');
+        document.getElementById('btn1').classList.add('active');
+    </script>
+</body>
+</html>
